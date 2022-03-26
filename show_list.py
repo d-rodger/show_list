@@ -28,7 +28,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def process_shows(parent_path):
+def process_shows(parent_path: Path):
     show_list = []
     path = Path(parent_path)
     for p in path.iterdir():
@@ -46,7 +46,7 @@ def process_shows(parent_path):
     return show_list
 
 
-def write_list(show_list, destination):
+def write_list(show_list: list, destination: str):
     with open(destination, "w") as fp:
         for show in show_list:
             fp.writelines(f"{show}\n")
